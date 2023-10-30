@@ -12,3 +12,20 @@ set -ex
 
 # Importamos el archivo de variables .env
 source .env
+
+#Instalación de snap y actualizacion del mismo.
+
+snap install core
+snap refresh core
+
+# Borramos certbot para instalarlo despues, en caso de que se encuentre, lo borramos de apt para instalarlo con snap.
+apt remove certbot
+
+# Instalamos la aplicacion certbot
+snap install --classic certbot
+
+#Creamos un alias para la aplicacion certbot
+ln -sf /snap/bin/certbot /usr/bin/certbot
+
+# Obtener el certificado.
+certbot --apache -m $CERTIFICATE_EMAIL --agree-tos --no-eff-email -d $CERTIFICATE_DOMAIN --non-interactive
