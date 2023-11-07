@@ -200,22 +200,24 @@ En el navegador --> ``http://nuestraipservidor/index.php``, y debería salirnos.
 ### Comandos principales.
 
 # Muestra todos los comandos que se han ejeutado.
-
+```
 set -ex
-
+```
 ### Y además detiene el script si hay un error.
 
 # Actualización de repositorios
+```
  apt update
-
+```
 ### En este apartado se actualiza el sistema.
 
 # Actualización de paquetes
 # sudo apt upgrade 
 
 # Importamos el archivo de variables .env
+```
 source .env
-
+```
 ## Primero que nada tenemos que crear un dominio.
 ### Para que nos aporté ssl a nuestro sitio web una autoridad certificadora, por eso he comentado anteriormente lo de lets encrypt, y diréis ¿como se ha hecho?
 
