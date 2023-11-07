@@ -263,7 +263,7 @@ snap install --classic certbot
 ln -sf /snap/bin/certbot /usr/bin/certbot
 ```
 ### Creamos un enlace simbólico donde:
-```
+```python
 ln --> Para crear un enlace en el sistema.
 -s --> El tipo de enlace que crea es simbólico.
 -f --> Para que lo cree por la fuerza.
@@ -277,7 +277,7 @@ certbot --apache -m $CERTIFICATE_EMAIL --agree-tos --no-eff-email -d $CERTIFICAT
 ```
 Nosotros si solo insertasemos ``certbot --apache``, lo ejecutaría pero, interrumpería la automatización del script, ya que buscamos que se realice automáticamente, esto se debe a que aparecen asistentes donde hay que insertar una serie de datos.
 
-```
+```python
 --apache: Esto significa que da el certificado para apache.
 -m: Establecemos la direccion de correo la cual la contiene la variable $CERTIFICATE_EMAIL del archivo .env, se puede cambiar por otra.
 --agree-tos: Con esto aceptamos terminos de uso.
